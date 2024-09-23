@@ -6,25 +6,31 @@ export default function Home() {
   const [getResponse, setGetResponse] = useState('');
 
   const handleGetRequest = async () => {
-    const res = await fetch('https://3832-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/hello', {
-      method: 'GET',
-    });
+    try {
+      
+      const res = await fetch('https://3832-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/hello', {
+        method: 'GET',
+      });
 
-    if (!res.ok) {
-      // ステータスコードが200でない場合の処理
-      console.error("HTTPエラー:", res.status);
-      const errorText = await res.text(); // レスポンス内容をテキスト形式で取得
-      console.error("エラーレスポンス:", errorText);
-      return;
-    }
-    
-    const data = await res.json();
+      if (!res.ok) {
+        // ステータスコードが200でない場合の処理
+        console.error("HTTPエラー:", res.status);
+        const errorText = await res.text(); // レスポンス内容をテキスト形式で取得
+        console.error("エラーレスポンス:", errorText);
+        return;
+      }
+      
+      const data = await res.json();
 
 
-    // GETリクエストの結果をコンソールに表示
-    console.log("GETリクエストの結果:", data.message);
+      // GETリクエストの結果をコンソールに表示
+      console.log("GETリクエストの結果:", data.message);
 
-    setGetResponse(data.message);
+      setGetResponse(data.message);
+
+  } catch (error) {
+    console.error("Fetchエラー:", error);
+  }
   };
 
   //動的なGETリクエストの送信
