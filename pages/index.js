@@ -6,7 +6,7 @@ export default function Home() {
   const [getResponse, setGetResponse] = useState('');
 
   const handleGetRequest = async () => {
-    const res = await fetch('https://step3-1-demo-b6dhetd9g5accxf6.canadacentral-01.azurewebsites.net/api/hello', {
+    const res = await fetch('https://9c73-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/hello', {
       method: 'GET',
     });
     const data = await res.json();
@@ -26,7 +26,7 @@ export default function Home() {
   const handleIdRequest = async (e) => {
     e.preventDefault();
 
-    const res = await fetch(`https://step3-1-demo-b6dhetd9g5accxf6.canadacentral-01.azurewebsites.net/api/multiply/${id}`, {
+    const res = await fetch(`https://9c73-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/multiply/${id}`, {
       method: 'GET',
     });
     const data = await res.json();
@@ -47,7 +47,7 @@ export default function Home() {
     //入力されたデータをコンソールに表示
     console.log("入力情報:", input);
 
-    const res = await fetch('https://step3-1-demo-b6dhetd9g5accxf6.canadacentral-01.azurewebsites.net/api/gpt', {
+    const res = await fetch('https://9c73-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/gpt', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
@@ -71,7 +71,7 @@ export default function Home() {
   //   //入力されたデータをコンソールに表示
   //   console.log("入力情報:", input);
 
-  //   const res = await fetch('https://step3-1-demo-b6dhetd9g5accxf6.canadacentral-01.azurewebsites.net/api/echo', {
+  //   const res = await fetch('https://9c73-240b-10-a0a0-8c00-e06e-fa5a-f1b-b358.ngrok-free.app/api/echo', {
   //     method: 'POST',
   //     headers: {
   //       'Content-Type': 'application/json',
@@ -97,7 +97,7 @@ export default function Home() {
   return (
     <div>
 
-      <h1>Next.jsとFlaskの連携アプリ</h1>
+      <h1>Next.jsとFlaskの連携アプリ（クラウド　→　ローカル）</h1>
 
       <h2>GETリクエストを送信</h2>
       <button onClick={handleGetRequest}>GETリクエストを送信</button>
